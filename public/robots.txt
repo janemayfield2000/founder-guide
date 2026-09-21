@@ -2,5 +2,5 @@ cat > robots.txt << 'EOF'
 User-agent: *
 Allow: /
 
-Sitemap: https://janemayfieldblog.web.app/sitemap.xml
+Sitemap: https://founder-guide.jane-mayfield2000.workers.dev/sitemap.xml
 EOF
