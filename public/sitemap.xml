@@ -2,10 +2,10 @@ cat > sitemap.xml << 'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://janemayfieldblog.web.app/</loc>
+    <loc>https://founder-guide.jane-mayfield2000.workers.dev/</loc>
   </url>
   <url>
-    <loc>https://janemayfieldblog.web.app/article.html</loc>
+    <loc>https://founder-guide.jane-mayfield2000.workers.dev/turns-100-directory-listings-into-a-domain-rating-boost</loc>
   </url>
 </urlset>
 EOF
