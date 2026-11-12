@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robots.txt for SEO Crawlers: A Beginner’s Guide to Allowing, Slowing and Blocking Bots</title>
+  <meta name="description" content="Learn how robots.txt works for SEO crawlers and how to allow, slow or block AhrefsBot with clear rules that protect your website and SEO data.">
+  <meta name="robots" content="index, follow">
+  <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  <style>
+    html, body {
+      background-color: #000000;
+      color: #e0e0e0;
+      margin: 0;
+      min-height: 100%;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    article {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      color: #ffffff;
+      line-height: 1.3;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 32px;
+      margin-bottom: 14px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 18px;
+    }
+    li {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    a {
+      color: #4da6ff;
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>Robots.txt for SEO Crawlers: A Beginner’s Guide to Allowing, Slowing and Blocking Bots</h1>
+    <img src="https://jpcdn.it/img/small/d4eae5a99018108c8bc2fccc2e473f5c.png" alt="Robots.txt for SEO Crawlers: A Beginner’s Guide to Allowing, Slowing and Blocking Bots">
+
+    <p>Robots.txt is one of the smallest files on your website and one of the most powerful. A few lines of plain text can decide which crawlers see your pages, how fast they move and which folders stay private. Yet many site owners either ignore the file completely or copy rules from a forum without understanding them.</p>
+
+    <p>This guide explains how robots.txt works for SEO crawlers, using AhrefsBot as the main example, so you can make confident decisions instead of lucky guesses.</p>
+
+    <h2>What Robots.txt Actually Does</h2>
+
+    <p>Robots.txt is a set of polite instructions placed at the root of your domain. Well-behaved crawlers read it before they request any page, and they follow the rules it contains. It is not a security system. A bad bot can simply ignore it, which is why the file works best as a first layer of control rather than the only one.</p>
+
+    <p>Each rule block starts by naming a crawler through its user-agent token and then lists what that crawler may or may not do. This simple structure covers most situations a typical website will ever face.</p>
+
+    <h2>Meet the Crawler: AhrefsBot</h2>
+
+    <p>AhrefsBot is the main web crawler run by Ahrefs. It collects URLs, internal links, titles, headings and anchor texts, and that data feeds tools such as Site Explorer and Keywords Explorer. It also supports the Yep.com search engine. The <a href="https://seobotai.com/blog/ahrefs-bot/">complete guide to AhrefsBot</a> explains its user-agent, its IP ranges and the difference between AhrefsBot and the separate AhrefsSiteAudit crawler.</p>
+
+    <p>What matters for robots.txt is that both crawlers obey Allow and Disallow rules, and both support the Crawl-delay directive. The token you target is simply AhrefsBot for the global crawler and AhrefsSiteAudit for the audit crawler.</p>
+
+    <h2>The Three Moves You Can Make</h2>
+
+    <p>Almost every robots.txt decision falls into one of three categories, and each one has a different effect on your SEO data:</p>
+
+    <ul>
+      <li><strong>Allow.</strong> Leave the crawler alone or state that everything is open. Your site appears fully in Ahrefs reports and the data stays fresh.</li>
+      <li><strong>Slow.</strong> Add a Crawl-delay value, such as ten seconds, so the bot spaces out its requests. This protects small servers while keeping your data flowing.</li>
+      <li><strong>Block.</strong> Disallow the whole site or specific folders. Blocked areas stop updating in Ahrefs, which affects you and anyone analyzing your domain.</li>
+    </ul>
+
+    <p>Most websites should start with the first or second option and only move to the third when there is a clear reason.</p>
+
+    <h2>Blocking Only What Needs Protection</h2>
+
+    <p>A full block is rarely the best answer. If your concern is private areas, disallow only those folders, for example admin pages, internal reports or a staging directory. The rest of the site stays visible, and you keep accurate backlink and keyword data for the pages that matter.</p>
+
+    <p>Path-level rules are also easier to maintain. When your site structure changes, you adjust a few lines instead of rethinking your whole relationship with a crawler. Combine them with a moderate Crawl-delay and you get a balanced setup that respects both your server and your SEO goals.</p>
+
+    <h2>Common Mistakes to Avoid</h2>
+
+    <p>The most frequent error is a leftover full block. A developer adds a Disallow rule for everything while the site is under construction, the site launches, and nobody removes it. Months later, Ahrefs shows no crawled pages and nobody understands why.</p>
+
+    <p>Another mistake is forgetting the audit crawler. If you block AhrefsBot but leave AhrefsSiteAudit open, or the other way around, you may get confusing results in different reports. Decide on purpose whether both crawlers should have the same access.</p>
+
+    <p>A third mistake is assuming that Crawl-delay works for every search engine. It does not. Ahrefs documents support for it, but Google ignores it, so do not rely on it to manage Googlebot.</p>
+
+    <h2>When Robots.txt Is Not Enough</h2>
+
+    <p>Because robots.txt depends on cooperation, it cannot stop impostors. Many scrapers copy a famous user-agent hoping to be trusted. To separate real traffic from fake, check that the IP belongs to the published Ahrefs ranges and that reverse DNS resolves to a hostname ending in ahrefs.com or ahrefs.net. Firewall and CDN rules can then enforce what robots.txt only requests.</p>
+
+    <p>Keep in mind that IP blocking is harder to maintain than a text file. Ranges change from time to time, so treat firewall rules as a last resort for situations that truly need strict enforcement.</p>
+
+    <h2>Does Your Tool Choice Change Your Robots.txt?</h2>
+
+    <p>Yes, because different tools bring different crawlers. A full platform such as Ahrefs runs its own bot, while a lighter keyword tool puts far less crawler traffic on your radar. The <a href="https://seobotai.com/blog/ahrefs-vs-kwfinder-comparison/">Ahrefs vs KWFinder comparison</a> shows how the two approaches differ in depth, price and complexity, which helps you decide how much crawler management you want to take on.</p>
+
+    <p>If you rely on Ahrefs for backlink and audit data, keep its crawler welcome. If you only need keyword ideas, you may care much less about what AhrefsBot sees.</p>
+
+    <h2>Test Before You Trust</h2>
+
+    <p>After editing robots.txt, confirm the file loads quickly and returns a normal response. A missing, slow or error-prone file makes crawlers cautious. Then check that your important pages return normal responses as well. Ahrefs offers tools to test whether its bots can reach your URLs, and a quick check takes only a minute.</p>
+
+    <h2>The Bottom Line</h2>
+
+    <p>Robots.txt rewards clarity. Decide what you want from each crawler, write the simplest rules that achieve it and test the result. Allow what helps you, slow what strains you and block only what truly needs protection.</p>
+  </article>
+</body>
+</html>
